@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yz1+xczB1ZK6E2PrAUM0xG1JZlIbE88BgqQ2ToXU9hM1PzZ2E6GeLDhMvmkAE/pPYgS2yy1DLkBAYg9UBe9Z6w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+    }
+    nav .logo {
+      font-weight: bold;
+      color: #764ba2;
+      font-size: 1.2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #764ba2;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 0;
+    }
+    .hero {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: white;
+      text-align: center;
+      padding: 160px 20px 120px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 12px 25px;
+      background: white;
+      color: #764ba2;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #ddd;
+    }
+    section {
+      background: white;
+      padding: 60px 0;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #222;
+    }
+    .about p, .services p {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
+    .service {
+      flex: 1 1 250px;
+      margin: 20px;
+      padding: 20px;
+      background: #f1f1f1;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-10px);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .portfolio-item {
+      background: #eee;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-item:hover {
+      transform: scale(1.05);
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 12px;
+      background: #764ba2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #5a3b91;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      .service-list {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><i class="fas fa-code"></i> MyPortfolio</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Hi, I'm John Doe</h1>
+      <p>A Creative Web Developer</p>
+      <a href="#portfolio" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="service-list">
+        <div class="service">
+          <h3><i class="fas fa-paint-brush"></i> Web Design</h3>
+          <p>Modern and responsive design for your website.</p>
+        </div>
+        <div class="service">
+          <h3><i class="fas fa-code"></i> Development</h3>
+          <p>Frontend and backend development tailored to your needs.</p>
+        </div>
+        <div class="service">
+          <h3><i class="fas fa-chart-line"></i> SEO</h3>
+          <p>Optimize your site for better search engine visibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2>My Work</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">Project 1</div>
+        <div class="portfolio-item">Project 2</div>
+        <div class="portfolio-item">Project 3</div>
+        <div class="portfolio-item">Project 4</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // IntersectionObserver for scroll animation
+    const sections = document.querySelectorAll("section");
+    const options = {
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
